@@ -6,7 +6,7 @@ class Index:
     
     def __init__(self):
         pass
-    '''
+    
     def GET(self):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -20,10 +20,7 @@ class Index:
 
     @staticmethod
     def GET_INDEX():
-    '''
-
     
-    def GET(self):
         result = config.model.get_all_clientes().list() # get clientes table list
         for row in result:
             row.id_cliente = config.make_secure_val(str(row.id_cliente)) # apply HMAC to id_cliente (primary key)

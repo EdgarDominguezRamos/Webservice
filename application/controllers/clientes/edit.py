@@ -7,7 +7,7 @@ class Edit:
     def __init__(self):
         pass
 
-    '''
+    
     def GET(self, id_cliente, **k):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -30,22 +30,18 @@ class Edit:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
+    
+
     @staticmethod
     def GET_EDIT(id_cliente, **k):
-
-    @staticmethod
-    def POST_EDIT(id_cliente, **k):
-        
-    '''
-
-    def GET(self, id_cliente, **k):
         message = None # Error message
         id_cliente = config.check_secure_val(str(id_cliente)) # HMAC id_cliente validate
         result = config.model.get_clientes(int(id_cliente)) # search for the id_cliente
         result.id_cliente = config.make_secure_val(str(result.id_cliente)) # apply HMAC for id_cliente
         return config.render.edit(result, message) # render clientes edit.html
 
-    def POST(self, id_cliente, **k):
+    @staticmethod
+    def POST_EDIT(id_cliente, **k):
         form = config.web.input()  # get form data
         form['id_cliente'] = config.check_secure_val(str(form['id_cliente'])) # HMAC id_cliente validate
         # edit user with new data

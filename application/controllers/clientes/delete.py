@@ -7,7 +7,6 @@ class Delete:
     def __init__(self):
         pass
 
-    '''
     def GET(self, id_cliente, **k):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -30,21 +29,19 @@ class Delete:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
+
+ 
+
     @staticmethod
     def GET_DELETE(id_cliente, **k):
-
-    @staticmethod
-    def POST_DELETE(id_cliente, **k):
-    '''
-
-    def GET(self, id_cliente, **k):
         message = None # Error message
         id_cliente = config.check_secure_val(str(id_cliente)) # HMAC id_cliente validate
         result = config.model.get_clientes(int(id_cliente)) # search  id_cliente
         result.id_cliente = config.make_secure_val(str(result.id_cliente)) # apply HMAC for id_cliente
         return config.render.delete(result, message) # render delete.html with user data
 
-    def POST(self, id_cliente, **k):
+    @staticmethod
+    def POST_DELETE(id_cliente, **k):def POST(self, id_cliente, **k):
         form = config.web.input() # get form data
         form['id_cliente'] = config.check_secure_val(str(form['id_cliente'])) # HMAC id_cliente validate
         result = config.model.delete_clientes(form['id_cliente']) # get clientes data
