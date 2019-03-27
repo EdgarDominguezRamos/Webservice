@@ -36,10 +36,11 @@ CREATE TABLE clientes(
     apellido_paterno varchar(50) NOT NULL,
     apellido_materno varchar(50) NOT NULL,
     telefono varchar(50) NOT NULL,
-    email varchar(50) NOT NULL,
+    email varchar(50) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO clientes(nombre,apellido_paterno,apellido_materno,telefono,email)
+INSERT INTO clientes(nombre,apellido_paterno,apellido_materno,telefono,email)VALUES(
+    'Enrique','Ortiz','Landazuri','1234567890','enrique@gmail.com');
 
 INSERT INTO users (username, password, privilege, status, name, email, other_data, user_hash, change_pwd)
 VALUES ('Edgar',MD5(concat('Edgar', 'kuorra_key')), 0, 1, 'Edgar', 'edgar@gmail.com','TIC:SI', MD5(concat('Edgar', 'kuorra_key', '2016/06/04')), 0),
