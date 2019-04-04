@@ -76,9 +76,9 @@ def NotFound():
     raise config.web.seeother('/')
 
 if __name__ == "__main__":
-    db.printing = False # hide db transactions
-    web.config.debug = False # hide debug print
-    web.config.db_printing = False # hide db transactions
-    app.internalerror = InternalError
+    db.printing = True # hide db transactions
+    web.config.debug = True # hide debug print
+    web.config.db_printing = True # hide db transactions
+    # app.internalerror = InternalError
     app.notfound = NotFound
     app.run()
