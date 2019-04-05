@@ -40,7 +40,8 @@ CREATE TABLE clientes(
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 INSERT INTO clientes(nombre,apellido_paterno,apellido_materno,telefono,email)VALUES(
-    'Enrique','Ortiz','Landazuri','1234567890','enrique@gmail.com');
+    'Andres','Masel','Calamaro','7775912409','andy@gmail.com'),
+    ('Alejandro','Lora','Serna','7710927169','Alex@gmail.com'));
 
 INSERT INTO users (username, password, privilege, status, name, email, other_data, user_hash, change_pwd)
 VALUES ('Edgar',MD5(concat('Edgar', 'kuorra_key')), 0, 1, 'Edgar', 'edgar@gmail.com','TIC:SI', MD5(concat('Edgar', 'kuorra_key', '2016/06/04')), 0),
