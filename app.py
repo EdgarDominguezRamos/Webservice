@@ -33,11 +33,13 @@ urls = (
     '/post/edit/(.+)', 'application.controllers.post.edit.Edit',
     '/post/delete/(.+)', 'application.controllers.post.delete.Delete',
     '/post/insert', 'application.controllers.post.insert.Insert',
+    '/api_post/?', 'application.api.post.api_post.Api_post',
     '/usuarios_eco', 'application.controllers.usuarios_eco.index.Index',
     '/usuarios_eco/view/(.+)', 'application.controllers.usuarios_eco.view.View',
     '/usuarios_eco/edit/(.+)', 'application.controllers.usuarios_eco.edit.Edit',
     '/usuarios_eco/delete/(.+)', 'application.controllers.usuarios_eco.delete.Delete',
     '/usuarios_eco/insert', 'application.controllers.usuarios_eco.insert.Insert',
+    '/api_usuarios_eco/?', 'application.api.usuarios_eco.api_usuarios_eco.Api_usuarios_eco',
 )
 
 app = web.application(urls, globals())
