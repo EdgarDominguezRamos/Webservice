@@ -1,0 +1,32 @@
+$def with(post, message)
+<h3>
+    <a href="/post">post</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id_post" id="id_post" value="$post.id_post" />
+
+    <div class="form-group">
+    <label for="procedimiento">procedimiento</label>
+    <input readonly id="procedimiento" type="text" class="form-control" name="procedimiento" size="30" value="$post.procedimiento"/>
+</div><div class="form-group">
+    <label for="link_video">link_video</label>
+    <input readonly id="link_video" type="text" class="form-control" name="link_video" size="30" value="$post.link_video"/>
+</div><div class="form-group">
+    <label for="id_comentario">id_comentario</label>
+    <input readonly id="id_comentario" type="text" class="form-control" name="id_comentario" size="30" value="$post.id_comentario"/>
+</div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+    </div>
+</form>
+<br>
+<br>
+<br>

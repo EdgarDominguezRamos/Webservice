@@ -1,0 +1,21 @@
+$def with(post)
+<h3>
+    <a href="/post">post</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>post</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        $for item in post:
+        <tr>
+            <td><a href='/post/view/$item.id_post'>$item.id_post</a></td>
+            <td><a href='/post/edit/$item.id_post'><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><a href='/post/delete/$item.id_post'><span class="glyphicon glyphicon-trash"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>

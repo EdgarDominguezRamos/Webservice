@@ -1,0 +1,5 @@
+'/post', 'application.controllers.post.index.Index',
+'/post/view/(.+)', 'application.controllers.post.view.View',
+'/post/edit/(.+)', 'application.controllers.post.edit.Edit',
+'/post/delete/(.+)', 'application.controllers.post.delete.Delete',
+'/post/insert', 'application.controllers.post.insert.Insert',
