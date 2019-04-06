@@ -45,6 +45,6 @@ class Insert:
 
         # call model insert_post and try to insert new data
         config.model.insert_post(
-            form['procedimiento'],form['link_video'],form['id_comentario'],
+            form['procedimiento'],form['link_video'],form['id_comentario'],form['titulo'],
         )
         raise config.web.seeother('/post') # render post index.html
