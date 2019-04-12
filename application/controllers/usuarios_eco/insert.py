@@ -30,10 +30,8 @@ class Insert:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
-    
-
     @staticmethod
-    def GET(self):
+    def GET_INSERT():
         return config.render.insert() # render insert.html
 
     @staticmethod
@@ -42,6 +40,6 @@ class Insert:
 
         # call model insert_usuarios_eco and try to insert new data
         config.model.insert_usuarios_eco(
-            form['nombre'],form['apellido_paterno'],form['apellido_materno'],form['email'],form['telefono'],form['descripcion'],
+            form['nombre'],form['descripcion'],form['imagen'],
         )
         raise config.web.seeother('/usuarios_eco') # render usuarios_eco index.html

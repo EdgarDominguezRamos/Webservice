@@ -31,25 +31,29 @@ def delete_post(id_post):
         return None
 
 
-def insert_post(procedimiento,link_video,id_comentario,titulo):
+def insert_post(Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco):
     try:
-        return db.insert('post',procedimiento=procedimiento,
+        return db.insert('post',Titulo=Titulo,
+descripcion=descripcion,
+procedimiento=procedimiento,
 link_video=link_video,
-id_comentario=id_comentario,
-titulo=titulo)
+imagen_p=imagen_p,
+id_usuario_eco=id_usuario_eco)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
         return None
 
 
-def edit_post(id_post,procedimiento,link_video,id_comentario,titulo):
+def edit_post(id_post,Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco):
     try:
         return db.update('post',id_post=id_post,
+Titulo=Titulo,
+descripcion=descripcion,
 procedimiento=procedimiento,
 link_video=link_video,
-id_comentario=id_comentario,
-titulo=titulo,
+imagen_p=imagen_p,
+id_usuario_eco=id_usuario_eco,
                   where='id_post=$id_post',
                   vars=locals())
     except Exception as e:

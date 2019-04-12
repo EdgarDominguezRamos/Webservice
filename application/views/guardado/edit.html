@@ -1,0 +1,25 @@
+$def with(guardado, message)
+<h3>
+    <a href="/guardado">guardado</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+    <br>
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id_guardado" id="id_guardado" value="$guardado.id_guardado" />
+
+    <div class="form-group">
+    <label for="id_usuario_eco">id_usuario_eco</label>
+    <input required id="id_usuario_eco" type="text" class="form-control" name="id_usuario_eco" size="30" value="$guardado.id_usuario_eco"/>
+</div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span class="glyphicon glyphicon-pencil"></span> Edit</button>
+    </div>
+</form>
+<br>
+<br>
+<br>

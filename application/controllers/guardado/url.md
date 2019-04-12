@@ -1,0 +1,5 @@
+'/guardado', 'application.controllers.guardado.index.Index',
+'/guardado/view/(.+)', 'application.controllers.guardado.view.View',
+'/guardado/edit/(.+)', 'application.controllers.guardado.edit.Edit',
+'/guardado/delete/(.+)', 'application.controllers.guardado.delete.Delete',
+'/guardado/insert', 'application.controllers.guardado.insert.Insert',

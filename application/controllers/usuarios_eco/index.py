@@ -18,8 +18,6 @@ class Index:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
-   
-
     
     @staticmethod
     def GET_INDEX():

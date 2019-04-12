@@ -29,9 +29,9 @@ class Api_usuarios_eco:
             return json.dumps(usuarios_eco_json)
 
 # http://0.0.0.0:8080/api_usuarios_eco?user_hash=12345&action=put&id_usuario_eco=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=0
-    def put(self, nombre,apellido_paterno,apellido_materno,email,telefono,descripcion):
+    def put(self, nombre,descripcion,imagen):
         try:
-            config.model.insert_usuarios_eco(nombre,apellido_paterno,apellido_materno,email,telefono,descripcion)
+            config.model.insert_usuarios_eco(nombre,descripcion,imagen)
             usuarios_eco_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(usuarios_eco_json)
@@ -51,9 +51,9 @@ class Api_usuarios_eco:
             return None
 
 # http://0.0.0.0:8080/api_usuarios_eco?user_hash=12345&action=update&id_usuario_eco=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=default.jpg
-    def update(self, id_usuario_eco, nombre,apellido_paterno,apellido_materno,email,telefono,descripcion):
+    def update(self, id_usuario_eco, nombre,descripcion,imagen):
         try:
-            config.model.edit_usuarios_eco(id_usuario_eco,nombre,apellido_paterno,apellido_materno,email,telefono,descripcion)
+            config.model.edit_usuarios_eco(id_usuario_eco,nombre,descripcion,imagen)
             usuarios_eco_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(usuarios_eco_json)
@@ -69,22 +69,16 @@ class Api_usuarios_eco:
             action=None,
             id_usuario_eco=None,
             nombre=None,
-            apellido_paterno=None,
-            apellido_materno=None,
-            email=None,
-            telefono=None,
             descripcion=None,
+            imagen=None,
         )
         try:
             user_hash = user_data.user_hash  # user validation
             action = user_data.action  # action GET, PUT, DELETE, UPDATE
             id_usuario_eco=user_data.id_usuario_eco
             nombre=user_data.nombre
-            apellido_paterno=user_data.apellido_paterno
-            apellido_materno=user_data.apellido_materno
-            email=user_data.email
-            telefono=user_data.telefono
             descripcion=user_data.descripcion
+            imagen=user_data.imagen
             # user_hash
             if user_hash == '12345':
                 if action is None:
@@ -92,11 +86,11 @@ class Api_usuarios_eco:
                 elif action == 'get':
                     return self.get(id_usuario_eco)
                 elif action == 'put':
-                    return self.put(nombre,apellido_paterno,apellido_materno,email,telefono,descripcion)
+                    return self.put(nombre,descripcion,imagen)
                 elif action == 'delete':
                     return self.delete(id_usuario_eco)
                 elif action == 'update':
-                    return self.update(id_usuario_eco, nombre,apellido_paterno,apellido_materno,email,telefono,descripcion)
+                    return self.update(id_usuario_eco, nombre,descripcion,imagen)
             else:
                 raise web.seeother('/404')
         except Exception as e:

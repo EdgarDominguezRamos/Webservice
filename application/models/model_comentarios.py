@@ -4,55 +4,51 @@ import config
 db = config.db
 
 
-def get_all_clientes():
+def get_all_comentarios():
     try:
-        return db.select('clientes')
+        return db.select('comentarios')
     except Exception as e:
         print "Model get all Error {}".format(e.args)
         print "Model get all Message {}".format(e.message)
         return None
 
 
-def get_clientes(id_cliente):
+def get_comentarios(id_comentario):
     try:
-        return db.select('clientes', where='id_cliente=$id_cliente', vars=locals())[0]
+        return db.select('comentarios', where='id_comentario=$id_comentario', vars=locals())[0]
     except Exception as e:
         print "Model get Error {}".format(e.args)
         print "Model get Message {}".format(e.message)
         return None
 
 
-def delete_clientes(id_cliente):
+def delete_comentarios(id_comentario):
     try:
-        return db.delete('clientes', where='id_cliente=$id_cliente', vars=locals())
+        return db.delete('comentarios', where='id_comentario=$id_comentario', vars=locals())
     except Exception as e:
         print "Model delete Error {}".format(e.args)
         print "Model delete Message {}".format(e.message)
         return None
 
 
-def insert_clientes(nombre,apellido_paterno,apellido_materno,telefono,email):
+def insert_comentarios(id_post,fecha_comentario,comentario):
     try:
-        return db.insert('clientes',nombre=nombre,
-apellido_paterno=apellido_paterno,
-apellido_materno=apellido_materno,
-telefono=telefono,
-email=email)
+        return db.insert('comentarios',id_post=id_post,
+fecha_comentario=fecha_comentario,
+comentario=comentario)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
         return None
 
 
-def edit_clientes(id_cliente,nombre,apellido_paterno,apellido_materno,telefono,email):
+def edit_comentarios(id_comentario,id_post,fecha_comentario,comentario):
     try:
-        return db.update('clientes',id_cliente=id_cliente,
-nombre=nombre,
-apellido_paterno=apellido_paterno,
-apellido_materno=apellido_materno,
-telefono=telefono,
-email=email,
-                  where='id_cliente=$id_cliente',
+        return db.update('comentarios',id_comentario=id_comentario,
+id_post=id_post,
+fecha_comentario=fecha_comentario,
+comentario=comentario,
+                  where='id_comentario=$id_comentario',
                   vars=locals())
     except Exception as e:
         print "Model update Error {}".format(e.args)

@@ -30,7 +30,7 @@ class Edit:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
-    
+
 
     @staticmethod
     def GET_EDIT(id_usuario_eco, **k):
@@ -41,12 +41,12 @@ class Edit:
         return config.render.edit(result, message) # render usuarios_eco edit.html
 
     @staticmethod
-    def POST_EDIT(id_usuario_eco, **k):def POST(self, id_usuario_eco, **k):
+    def POST_EDIT(id_usuario_eco, **k):
         form = config.web.input()  # get form data
         form['id_usuario_eco'] = config.check_secure_val(str(form['id_usuario_eco'])) # HMAC id_usuario_eco validate
         # edit user with new data
         result = config.model.edit_usuarios_eco(
-            form['id_usuario_eco'],form['nombre'],form['apellido_paterno'],form['apellido_materno'],form['email'],form['telefono'],form['descripcion'],
+            form['id_usuario_eco'],form['nombre'],form['descripcion'],form['imagen'],
         )
         if result == None: # Error on udpate data
             id_usuario_eco = config.check_secure_val(str(id_usuario_eco)) # validate HMAC id_usuario_eco

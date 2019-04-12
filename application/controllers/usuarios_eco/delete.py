@@ -7,7 +7,6 @@ class Delete:
     def __init__(self):
         pass
 
-    
     def GET(self, id_usuario_eco, **k):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -30,7 +29,6 @@ class Delete:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
-   
 
     @staticmethod
     def GET_DELETE(id_usuario_eco, **k):
