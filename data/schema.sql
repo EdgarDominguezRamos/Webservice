@@ -61,8 +61,14 @@ CREATE TABLE comentarios(
     FOREIGN KEY (id_post) REFERENCES post(id_post));
 
 
-INSERT INTO clientes(nombre,apellido_paterno,apellido_materno,telefono,email)VALUES(
-    'Andres','Masel','Calamaro','7775912409','andy@gmail.com'),
+INSERT INTO comentarios(id_post,comentario)VALUES(
+    '1','Muy buena recomendacion'),
+    ('2','gran descricion'),
+    ('3','que buen post'),
+    ('4','queda genial el resultado'),
+    ('5','me gusta mucho este post'),
+    ('6','tu prefil es genial'),
+    ('7','esto es muy bueno');
     ('Alejandro','Lora','Serna','7710927169','Alex@gmail.com'));
 
 INSERT INTO usuarios_eco(nombre,descripcion,imagen)VALUES(
