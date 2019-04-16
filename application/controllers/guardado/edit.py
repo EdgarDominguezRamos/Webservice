@@ -50,7 +50,7 @@ class Edit:
         form['id_guardado'] = config.check_secure_val(str(form['id_guardado'])) # HMAC id_guardado validate
         # edit user with new data
         result = config.model.edit_guardado(
-            form['id_guardado'],form['id_usuario_eco'],
+            form['id_guardado'],form['id_usuario_eco'],form['id_post'],
         )
         if result == None: # Error on udpate data
             id_guardado = config.check_secure_val(str(id_guardado)) # validate HMAC id_guardado

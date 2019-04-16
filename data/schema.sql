@@ -2,6 +2,9 @@ CREATE DATABASE eco_system;
 
 USE eco_system;
 
+ALTER TABLE usuarios_eco
+ADD password varchar(32) NOT NULL;
+
 CREATE TABLE users(
     username varchar(20) NOT NULL PRIMARY KEY,
     password varchar(32) NOT NULL,

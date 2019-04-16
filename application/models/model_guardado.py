@@ -31,19 +31,21 @@ def delete_guardado(id_guardado):
         return None
 
 
-def insert_guardado(id_usuario_eco):
+def insert_guardado(id_usuario_eco,id_post):
     try:
-        return db.insert('guardado',id_usuario_eco=id_usuario_eco)
+        return db.insert('guardado',id_usuario_eco=id_usuario_eco,
+id_post=id_post)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
         return None
 
 
-def edit_guardado(id_guardado,id_usuario_eco):
+def edit_guardado(id_guardado,id_usuario_eco,id_post):
     try:
         return db.update('guardado',id_guardado=id_guardado,
 id_usuario_eco=id_usuario_eco,
+id_post=id_post,
                   where='id_guardado=$id_guardado',
                   vars=locals())
     except Exception as e:

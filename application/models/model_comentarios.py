@@ -31,23 +31,25 @@ def delete_comentarios(id_comentario):
         return None
 
 
-def insert_comentarios(id_post,fecha_comentario,comentario):
+def insert_comentarios(id_post,fecha_comentario,comentario,id_usuario_eco):
     try:
         return db.insert('comentarios',id_post=id_post,
 fecha_comentario=fecha_comentario,
-comentario=comentario)
+comentario=comentario,
+id_usuario_eco=id_usuario_eco)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
         return None
 
 
-def edit_comentarios(id_comentario,id_post,fecha_comentario,comentario):
+def edit_comentarios(id_comentario,id_post,fecha_comentario,comentario,id_usuario_eco):
     try:
         return db.update('comentarios',id_comentario=id_comentario,
 id_post=id_post,
 fecha_comentario=fecha_comentario,
 comentario=comentario,
+id_usuario_eco=id_usuario_eco,
                   where='id_comentario=$id_comentario',
                   vars=locals())
     except Exception as e:

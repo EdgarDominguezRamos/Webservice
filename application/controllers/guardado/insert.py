@@ -45,6 +45,6 @@ class Insert:
 
         # call model insert_guardado and try to insert new data
         config.model.insert_guardado(
-            form['id_usuario_eco'],
+            form['id_usuario_eco'],form['id_post'],
         )
         raise config.web.seeother('/guardado') # render guardado index.html

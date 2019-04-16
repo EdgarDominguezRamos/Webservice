@@ -31,23 +31,23 @@ def delete_usuarios_eco(id_usuario_eco):
         return None
 
 
-def insert_usuarios_eco(nombre,descripcion,imagen):
+def insert_usuarios_eco(nombre,descripcion,password):
     try:
         return db.insert('usuarios_eco',nombre=nombre,
 descripcion=descripcion,
-imagen=imagen)
+password=password)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)
         return None
 
 
-def edit_usuarios_eco(id_usuario_eco,nombre,descripcion,imagen):
+def edit_usuarios_eco(id_usuario_eco,nombre,descripcion,password):
     try:
         return db.update('usuarios_eco',id_usuario_eco=id_usuario_eco,
 nombre=nombre,
 descripcion=descripcion,
-imagen=imagen,
+password=password,
                   where='id_usuario_eco=$id_usuario_eco',
                   vars=locals())
     except Exception as e:

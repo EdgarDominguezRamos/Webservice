@@ -7,7 +7,7 @@ class Insert:
     def __init__(self):
         pass
 
-    
+    '''
     def GET(self):
         if app.session.loggedin is True:
             # session_username = app.session.username
@@ -32,14 +32,19 @@ class Insert:
 
     @staticmethod
     def GET_INSERT():
-        return config.render.insert() # render insert.html
 
     @staticmethod
     def POST_INSERT():
+    '''
+
+    def GET(self):
+        return config.render.insert() # render insert.html
+
+    def POST(self):
         form = config.web.input() # get form data
 
         # call model insert_usuarios_eco and try to insert new data
         config.model.insert_usuarios_eco(
-            form['nombre'],form['descripcion'],form['imagen'],
+            form['nombre'],form['descripcion'],form['password'],
         )
         raise config.web.seeother('/usuarios_eco') # render usuarios_eco index.html
