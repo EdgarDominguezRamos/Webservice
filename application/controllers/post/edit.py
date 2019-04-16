@@ -33,7 +33,7 @@ class Edit:
 
 
     @staticmethod
-    def GET_EDIT(id_post, **k):def GET(self, id_post, **k):
+    def GET_EDIT(id_post, **k):
         message = None # Error message
         id_post = config.check_secure_val(str(id_post)) # HMAC id_post validate
         result = config.model.get_post(int(id_post)) # search for the id_post
