@@ -31,17 +31,16 @@ class Insert:
             raise config.web.seeother('/login') # render login.html
 
 
-
     @staticmethod
     def GET_INSERT():
         return config.render.insert() # render insert.html
 
     @staticmethod
-    def POST_INSERT():
+    def POST_INSERT():def POST(self):
         form = config.web.input() # get form data
 
         # call model insert_post and try to insert new data
         config.model.insert_post(
-            form['Titulo'],form['descripcion'],form['procedimiento'],form['link_video'],form['imagen_p'],form['id_usuario_eco'],
+            form['Titulo'],form['descripcion'],form['procedimiento'],form['link_video'],form['id_usuario_eco'],form['categoria'],
         )
         raise config.web.seeother('/post') # render post index.html

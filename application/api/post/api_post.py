@@ -29,9 +29,9 @@ class Api_post:
             return json.dumps(post_json)
 
 # http://0.0.0.0:8080/api_post?user_hash=12345&action=put&id_post=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=0
-    def put(self, Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco):
+    def put(self, Titulo,descripcion,procedimiento,link_video,id_usuario_eco,categoria):
         try:
-            config.model.insert_post(Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco)
+            config.model.insert_post(Titulo,descripcion,procedimiento,link_video,id_usuario_eco,categoria)
             post_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(post_json)
@@ -51,9 +51,9 @@ class Api_post:
             return None
 
 # http://0.0.0.0:8080/api_post?user_hash=12345&action=update&id_post=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=default.jpg
-    def update(self, id_post, Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco):
+    def update(self, id_post, Titulo,descripcion,procedimiento,link_video,id_usuario_eco,categoria):
         try:
-            config.model.edit_post(id_post,Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco)
+            config.model.edit_post(id_post,Titulo,descripcion,procedimiento,link_video,id_usuario_eco,categoria)
             post_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(post_json)
@@ -72,8 +72,8 @@ class Api_post:
             descripcion=None,
             procedimiento=None,
             link_video=None,
-            imagen_p=None,
             id_usuario_eco=None,
+            categoria=None,
         )
         try:
             user_hash = user_data.user_hash  # user validation
@@ -83,8 +83,8 @@ class Api_post:
             descripcion=user_data.descripcion
             procedimiento=user_data.procedimiento
             link_video=user_data.link_video
-            imagen_p=user_data.imagen_p
             id_usuario_eco=user_data.id_usuario_eco
+            categoria=user_data.categoria
             # user_hash
             if user_hash == '12345':
                 if action is None:
@@ -92,11 +92,11 @@ class Api_post:
                 elif action == 'get':
                     return self.get(id_post)
                 elif action == 'put':
-                    return self.put(Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco)
+                    return self.put(Titulo,descripcion,procedimiento,link_video,id_usuario_eco,categoria)
                 elif action == 'delete':
                     return self.delete(id_post)
                 elif action == 'update':
-                    return self.update(id_post, Titulo,descripcion,procedimiento,link_video,imagen_p,id_usuario_eco)
+                    return self.update(id_post, Titulo,descripcion,procedimiento,link_video,id_usuario_eco,categoria)
             else:
                 raise web.seeother('/404')
         except Exception as e:

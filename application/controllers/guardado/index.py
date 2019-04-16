@@ -8,7 +8,7 @@ class Index:
         pass
     
     def GET(self):
-        if app.session.loggedin is True: # validate if the user is logged
+        if app.session.loggedin is True: # vlidate if the user is logged
             # session_username = app.session.username
             session_privilege = app.session.privilege # get the session_privilege 
             if session_privilege == 0: # admin user

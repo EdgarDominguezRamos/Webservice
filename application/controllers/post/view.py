@@ -21,7 +21,6 @@ class View:
             raise config.web.seeother('/login') # render login.html
 
 
-
     @staticmethod
     def GET_VIEW(id_post):
         id_post = config.check_secure_val(str(id_post)) # HMAC id_post validate

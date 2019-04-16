@@ -46,7 +46,7 @@ class Edit:
         form['id_post'] = config.check_secure_val(str(form['id_post'])) # HMAC id_post validate
         # edit user with new data
         result = config.model.edit_post(
-            form['id_post'],form['Titulo'],form['descripcion'],form['procedimiento'],form['link_video'],form['imagen_p'],form['id_usuario_eco'],
+            form['id_post'],form['Titulo'],form['descripcion'],form['procedimiento'],form['link_video'],form['id_usuario_eco'],form['categoria'],
         )
         if result == None: # Error on udpate data
             id_post = config.check_secure_val(str(id_post)) # validate HMAC id_post
