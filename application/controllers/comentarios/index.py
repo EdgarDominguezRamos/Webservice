@@ -21,7 +21,7 @@ class Index:
 
     
     @staticmethod
-    def GET_INDEX():def GET(self):
+    def GET_INDEX():
         result = config.model.get_all_comentarios().list() # get comentarios table list
         for row in result:
             row.id_comentario = config.make_secure_val(str(row.id_comentario)) # apply HMAC to id_comentario (primary key)

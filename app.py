@@ -47,6 +47,10 @@ urls = (
     '/comentarios/edit/(.+)', 'application.controllers.comentarios.edit.Edit',
     '/comentarios/delete/(.+)', 'application.controllers.comentarios.delete.Delete',
     '/comentarios/insert', 'application.controllers.comentarios.insert.Insert',
+    '/api_comentarios/?', 'application.api.comentarios.api_comentarios.Api_comentarios',
+    '/api_guardado/?', 'application.api.guardado.api_guardado.Api_guardado',
+    '/api_post/?', 'application.api.post.api_post.Api_post',
+    '/api_usuarios_eco/?', 'application.api.usuarios_eco.api_usuarios_eco.Api_usuarios_eco',
 )
 
 app = web.application(urls, globals())
