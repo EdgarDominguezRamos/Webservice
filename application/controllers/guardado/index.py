@@ -6,7 +6,7 @@ class Index:
     
     def __init__(self):
         pass
-    '''
+    
     def GET(self):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -18,12 +18,10 @@ class Index:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
-    @staticmethod
-    def GET_INDEX():
-    '''
 
     
-    def GET(self):
+    @staticmethod
+    def GET_INDEX():
         result = config.model.get_all_guardado().list() # get guardado table list
         for row in result:
             row.id_guardado = config.make_secure_val(str(row.id_guardado)) # apply HMAC to id_guardado (primary key)

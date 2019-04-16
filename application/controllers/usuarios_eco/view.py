@@ -8,7 +8,7 @@ class View:
     def __init__(self):
         pass
 
-    '''
+    
     def GET(self, id_usuario_eco):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -20,11 +20,10 @@ class View:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
+
+
     @staticmethod
     def GET_VIEW(id_usuario_eco):
-    '''
-
-    def GET(self, id_usuario_eco):
         id_usuario_eco = config.check_secure_val(str(id_usuario_eco)) # HMAC id_usuario_eco validate
         result = config.model.get_usuarios_eco(id_usuario_eco) # search for the id_usuario_eco data
         return config.render.view(result) # render view.html with id_usuario_eco data
