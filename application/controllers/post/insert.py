@@ -36,7 +36,7 @@ class Insert:
         return config.render.insert() # render insert.html
 
     @staticmethod
-    def POST_INSERT():def POST(self):
+    def POST_INSERT():
         form = config.web.input() # get form data
 
         # call model insert_post and try to insert new data
