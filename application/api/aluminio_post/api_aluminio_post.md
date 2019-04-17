@@ -1,0 +1,1 @@
+'/api_aluminio_post/?', 'application.api.aluminio_post.api_aluminio_post.Api_aluminio_post',

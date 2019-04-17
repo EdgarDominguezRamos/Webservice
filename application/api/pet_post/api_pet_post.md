@@ -1,0 +1,1 @@
+'/api_pet_post/?', 'application.api.pet_post.api_pet_post.Api_pet_post',
