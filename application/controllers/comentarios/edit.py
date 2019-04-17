@@ -7,7 +7,7 @@ class Edit:
     def __init__(self):
         pass
 
-    '''
+    
     def GET(self, id_comentario, **k):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -30,21 +30,16 @@ class Edit:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
+
     @staticmethod
     def GET_EDIT(id_comentario, **k):
-
-    @staticmethod
-    def POST_EDIT(id_comentario, **k):
-        
-    '''
-
-    def GET(self, id_comentario, **k):
         message = None # Error message
         id_comentario = config.check_secure_val(str(id_comentario)) # HMAC id_comentario validate
         result = config.model.get_comentarios(int(id_comentario)) # search for the id_comentario
         result.id_comentario = config.make_secure_val(str(result.id_comentario)) # apply HMAC for id_comentario
         return config.render.edit(result, message) # render comentarios edit.html
 
+    @staticmethod
     def POST(self, id_comentario, **k):
         form = config.web.input()  # get form data
         form['id_comentario'] = config.check_secure_val(str(form['id_comentario'])) # HMAC id_comentario validate
