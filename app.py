@@ -51,6 +51,12 @@ urls = (
     '/api_guardado/?', 'application.api.guardado.api_guardado.Api_guardado',
     '/api_post/?', 'application.api.post.api_post.Api_post',
     '/api_usuarios_eco/?', 'application.api.usuarios_eco.api_usuarios_eco.Api_usuarios_eco',
+    '/vista_aluminio', 'application.controllers.vista_aluminio.index.Index',
+    '/vista_aluminio/view/(.+)', 'application.controllers.vista_aluminio.view.View',
+    '/vista_aluminio/edit/(.+)', 'application.controllers.vista_aluminio.edit.Edit',
+    '/vista_aluminio/delete/(.+)', 'application.controllers.vista_aluminio.delete.Delete',
+    '/vista_aluminio/insert', 'application.controllers.vista_aluminio.insert.Insert',
+    '/api_vista_aluminio/?', 'application.api.vista_aluminio.api_vista_aluminio.Api_vista_aluminio',
 )
 
 app = web.application(urls, globals())

@@ -1,0 +1,21 @@
+$def with(vista_aluminio)
+<h3>
+    <a href="/vista_aluminio">vista_aluminio</a>
+</h3>
+<table id="datos_tabla" class="table table-hover" cellspacing="0" width="100%">
+    <thead>
+        <th>vista_aluminio</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        $for item in vista_aluminio:
+        <tr>
+            <td><a href='/vista_aluminio/view/$item.'>$item.</a></td>
+            <td><a href='/vista_aluminio/edit/$item.'><span class="glyphicon glyphicon-pencil"></span></a></td>
+            <td><a href='/vista_aluminio/delete/$item.'><span class="glyphicon glyphicon-trash"></span></a></td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<br>

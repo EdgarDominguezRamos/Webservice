@@ -1,0 +1,5 @@
+'/vista_aluminio', 'application.controllers.vista_aluminio.index.Index',
+'/vista_aluminio/view/(.+)', 'application.controllers.vista_aluminio.view.View',
+'/vista_aluminio/edit/(.+)', 'application.controllers.vista_aluminio.edit.Edit',
+'/vista_aluminio/delete/(.+)', 'application.controllers.vista_aluminio.delete.Delete',
+'/vista_aluminio/insert', 'application.controllers.vista_aluminio.insert.Insert',
