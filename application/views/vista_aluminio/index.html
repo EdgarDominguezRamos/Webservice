@@ -11,7 +11,7 @@ $def with(vista_aluminio)
     <tbody>
         $for item in vista_aluminio:
         <tr>
-            <td><a href='/vista_aluminio/view/$item.'>$item.</a></td>
+            <td><a href='/vista_aluminio/view/$item.'>$item.titulo $item.categoria</a></td>
             <td><a href='/vista_aluminio/edit/$item.'><span class="glyphicon glyphicon-pencil"></span></a></td>
             <td><a href='/vista_aluminio/delete/$item.'><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
