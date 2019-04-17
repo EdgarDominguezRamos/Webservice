@@ -6,7 +6,7 @@ class Index:
     
     def __init__(self):
         pass
-    '''
+
     def GET(self):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -18,12 +18,9 @@ class Index:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
+    
     @staticmethod
     def GET_INDEX():
-    '''
-
-    
-    def GET(self):
         result = config.model.get_all_vista_aluminio().list() # get vista_aluminio table list
         for row in result:
             row. = config.make_secure_val(str(row.)) # apply HMAC to  (primary key)

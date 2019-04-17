@@ -8,7 +8,7 @@ class View:
     def __init__(self):
         pass
 
-    '''
+    
     def GET(self, ):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -20,11 +20,9 @@ class View:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
+
     @staticmethod
     def GET_VIEW():
-    '''
-
-    def GET(self, ):
          = config.check_secure_val(str()) # HMAC  validate
         result = config.model.get_vista_aluminio() # search for the  data
         return config.render.view(result) # render view.html with  data

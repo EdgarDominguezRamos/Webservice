@@ -7,7 +7,6 @@ class Delete:
     def __init__(self):
         pass
 
-    '''
     def GET(self, , **k):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -30,21 +29,17 @@ class Delete:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
+
     @staticmethod
     def GET_DELETE(, **k):
-
-    @staticmethod
-    def POST_DELETE(, **k):
-    '''
-
-    def GET(self, , **k):
         message = None # Error message
          = config.check_secure_val(str()) # HMAC  validate
         result = config.model.get_vista_aluminio(int()) # search  
         result. = config.make_secure_val(str(result.)) # apply HMAC for 
         return config.render.delete(result, message) # render delete.html with user data
 
-    def POST(self, , **k):
+    @staticmethod
+    def POST_DELETE(, **k):
         form = config.web.input() # get form data
         form[''] = config.check_secure_val(str(form[''])) # HMAC  validate
         result = config.model.delete_vista_aluminio(form['']) # get vista_aluminio data
