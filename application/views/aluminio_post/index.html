@@ -11,7 +11,7 @@ $def with(aluminio_post)
     <tbody>
         $for item in aluminio_post:
         <tr>
-            <td><a href='/aluminio_post/view/$item.id_aluminio_post'>$item.id_aluminio_post</a></td>
+            <td><a href='/aluminio_post/view/$item.id_aluminio_post'>$item.titulo </a></td>
             <td><a href='/aluminio_post/edit/$item.id_aluminio_post'><span class="glyphicon glyphicon-pencil"></span></a></td>
             <td><a href='/aluminio_post/delete/$item.id_aluminio_post'><span class="glyphicon glyphicon-trash"></span></a></td>
         </tr>
