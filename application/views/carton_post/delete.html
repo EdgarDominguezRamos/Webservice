@@ -1,0 +1,38 @@
+$def with(carton_post, message)
+<h3>
+    <a href="/carton_post">carton_post</a>
+</h3>
+$if message != None:
+    <div class="alert alert-warning">
+        <strong>Advertencia </strong> $message
+    </div>
+<br>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="id_carton_post" id="id_carton_post" value="$carton_post.id_carton_post" />
+
+    <div class="form-group">
+    <label for="titulo">titulo</label>
+    <input readonly id="titulo" type="text" class="form-control" name="titulo" size="30" value="$carton_post.titulo"/>
+</div><div class="form-group">
+    <label for="descripcion">descripcion</label>
+    <input readonly id="descripcion" type="text" class="form-control" name="descripcion" size="30" value="$carton_post.descripcion"/>
+</div><div class="form-group">
+    <label for="procedimiento">procedimiento</label>
+    <input readonly id="procedimiento" type="text" class="form-control" name="procedimiento" size="30" value="$carton_post.procedimiento"/>
+</div><div class="form-group">
+    <label for="link_video">link_video</label>
+    <input readonly id="link_video" type="text" class="form-control" name="link_video" size="30" value="$carton_post.link_video"/>
+</div><div class="form-group">
+    <label for="id_usuario_eco">id_usuario_eco</label>
+    <input readonly id="id_usuario_eco" type="text" class="form-control" name="id_usuario_eco" size="30" value="$carton_post.id_usuario_eco"/>
+</div>
+
+    <div class="form-group">
+        <label></label>
+        <button id="send" name="send" class="form-control"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+    </div>
+</form>
+<br>
+<br>
+<br>

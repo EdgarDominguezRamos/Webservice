@@ -24,7 +24,7 @@ class Index:
 
     
     def GET(self):
-        result = config.model.get_all_comentarios().list() # get comentarios table list
+        result = config.model.get_all_aluminio_post().list() # get aluminio_post table list
         for row in result:
-            row.id_comentario = config.make_secure_val(str(row.id_comentario)) # apply HMAC to id_comentario (primary key)
-        return config.render.index(result) # render comentarios index.html
+            row.id_aluminio_post = config.make_secure_val(str(row.id_aluminio_post)) # apply HMAC to id_aluminio_post (primary key)
+        return config.render.index(result) # render aluminio_post index.html

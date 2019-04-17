@@ -31,11 +31,15 @@ def delete_comentarios(id_comentario):
         return None
 
 
-def insert_comentarios(id_post,fecha_comentario,comentario,id_usuario_eco):
+def insert_comentarios(id_post,id_aluminio_post,id_pet_post,id_carton_post,fecha_comentario,comentario,categoria,id_usuario_eco):
     try:
         return db.insert('comentarios',id_post=id_post,
+id_aluminio_post=id_aluminio_post,
+id_pet_post=id_pet_post,
+id_carton_post=id_carton_post,
 fecha_comentario=fecha_comentario,
 comentario=comentario,
+categoria=categoria,
 id_usuario_eco=id_usuario_eco)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
@@ -43,12 +47,16 @@ id_usuario_eco=id_usuario_eco)
         return None
 
 
-def edit_comentarios(id_comentario,id_post,fecha_comentario,comentario,id_usuario_eco):
+def edit_comentarios(id_comentario,id_post,id_aluminio_post,id_pet_post,id_carton_post,fecha_comentario,comentario,categoria,id_usuario_eco):
     try:
         return db.update('comentarios',id_comentario=id_comentario,
 id_post=id_post,
+id_aluminio_post=id_aluminio_post,
+id_pet_post=id_pet_post,
+id_carton_post=id_carton_post,
 fecha_comentario=fecha_comentario,
 comentario=comentario,
+categoria=categoria,
 id_usuario_eco=id_usuario_eco,
                   where='id_comentario=$id_comentario',
                   vars=locals())

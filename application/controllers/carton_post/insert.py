@@ -43,8 +43,8 @@ class Insert:
     def POST(self):
         form = config.web.input() # get form data
 
-        # call model insert_guardado and try to insert new data
-        config.model.insert_guardado(
-            form['id_usuario_eco'],form['id_post'],form['categoria'],
+        # call model insert_carton_post and try to insert new data
+        config.model.insert_carton_post(
+            form['titulo'],form['descripcion'],form['procedimiento'],form['link_video'],form['id_usuario_eco'],
         )
-        raise config.web.seeother('/guardado') # render guardado index.html
+        raise config.web.seeother('/carton_post') # render carton_post index.html

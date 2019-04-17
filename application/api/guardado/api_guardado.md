@@ -1,1 +1,0 @@
-'/api_guardado/?', 'application.api.guardado.api_guardado.Api_guardado',

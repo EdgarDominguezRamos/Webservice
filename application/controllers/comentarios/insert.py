@@ -7,7 +7,7 @@ class Insert:
     def __init__(self):
         pass
 
-
+    '''
     def GET(self):
         if app.session.loggedin is True:
             # session_username = app.session.username
@@ -30,17 +30,21 @@ class Insert:
         else: # the user dont have logged
             raise config.web.seeother('/login') # render login.html
 
-
     @staticmethod
     def GET_INSERT():
-        return config.render.insert() # render insert.html
 
     @staticmethod
     def POST_INSERT():
+    '''
+
+    def GET(self):
+        return config.render.insert() # render insert.html
+
+    def POST(self):
         form = config.web.input() # get form data
 
         # call model insert_comentarios and try to insert new data
         config.model.insert_comentarios(
-            form['id_post'],form['fecha_comentario'],form['comentario'],form['id_usuario_eco'],
+            form['id_post'],form['id_aluminio_post'],form['id_pet_post'],form['id_carton_post'],form['fecha_comentario'],form['comentario'],form['categoria'],form['id_usuario_eco'],
         )
         raise config.web.seeother('/comentarios') # render comentarios index.html
