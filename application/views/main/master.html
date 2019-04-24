@@ -8,7 +8,7 @@ $def with (page)
 
 
 <head>
-    <title>Eco System login::</title>
+    <title>Eco System::Login</title>
     <meta http-equiv="refresh" content="60; url=/logout" />
     <link rel="icon" type="image/png" href="/static/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +39,9 @@ $def with (page)
                 <ul class="nav navbar-nav navbar-right">
                     $if page.privilege == '-1':
                         <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                        <li><a href="/aluminio_post"><span class="glyphicon glyphicon-log-in"></span>Aluminio</a></li>
+                        <li><a href="/carton_post"><span class="glyphicon glyphicon-log-in"></span>Cartón</a></li>
+                        <li><a href="/pet_post"><span class="glyphicon glyphicon-log-in"></span>PET</a></li>
 
                     $elif page.privilege == '0':
                         <li class='active'><a href="/"><span class="glyphicon glyphicon-user"></span> $page.username </a></li>

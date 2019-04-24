@@ -1,5 +1,0 @@
-'/aluminio_post', 'application.controllers.aluminio_post.index.Index',
-'/aluminio_post/view/(.+)', 'application.controllers.aluminio_post.view.View',
-'/aluminio_post/edit/(.+)', 'application.controllers.aluminio_post.edit.Edit',
-'/aluminio_post/delete/(.+)', 'application.controllers.aluminio_post.delete.Delete',
-'/aluminio_post/insert', 'application.controllers.aluminio_post.insert.Insert',
