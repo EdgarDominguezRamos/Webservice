@@ -1,0 +1,5 @@
+'/pet_post', 'application.controllers.pet_post.index.Index',
+'/pet_post/view/(.+)', 'application.controllers.pet_post.view.View',
+'/pet_post/edit/(.+)', 'application.controllers.pet_post.edit.Edit',
+'/pet_post/delete/(.+)', 'application.controllers.pet_post.delete.Delete',
+'/pet_post/insert', 'application.controllers.pet_post.insert.Insert',
