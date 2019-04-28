@@ -8,7 +8,7 @@ class View:
     def __init__(self):
         pass
 
-    
+    '''
     def GET(self, id_comentario):
         if app.session.loggedin is True: # validate if the user is logged
             # session_username = app.session.username
@@ -22,6 +22,9 @@ class View:
 
     @staticmethod
     def GET_VIEW(id_comentario):
+    '''
+
+    def GET(self, id_comentario):
         id_comentario = config.check_secure_val(str(id_comentario)) # HMAC id_comentario validate
         result = config.model.get_comentarios(id_comentario) # search for the id_comentario data
         return config.render.view(result) # render view.html with id_comentario data
