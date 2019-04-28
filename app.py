@@ -61,7 +61,7 @@ urls = (
     '/api_aluminio_post/?', 'application.api.aluminio_post.api_aluminio_post.Api_aluminio_post',
     '/api_carton_post/?', 'application.api.carton_post.api_carton_post.Api_carton_post',
     '/api_pet_post/?', 'application.api.pet_post.api_pet_post.Api_pet_post',
-   
+    '/api_comentarios/?', 'application.api.comentarios.api_comentarios.Api_comentarios',
     '/api_post/?', 'application.api.post.api_post.Api_post',
     '/api_usuarios_eco/?', 'application.api.usuarios_eco.api_usuarios_eco.Api_usuarios_eco',
 )
