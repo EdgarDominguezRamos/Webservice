@@ -31,13 +31,12 @@ def delete_comentarios(id_comentario):
         return None
 
 
-def insert_comentarios(id_post,id_aluminio_post,id_pet_post,id_carton_post,fecha_comentario,comentario,categoria,id_usuario_eco):
+def insert_comentarios(id_post,id_aluminio_post,id_pet_post,id_carton_post,comentario,categoria,id_usuario_eco):
     try:
         return db.insert('comentarios',id_post=id_post,
 id_aluminio_post=id_aluminio_post,
 id_pet_post=id_pet_post,
 id_carton_post=id_carton_post,
-fecha_comentario=fecha_comentario,
 comentario=comentario,
 categoria=categoria,
 id_usuario_eco=id_usuario_eco)
