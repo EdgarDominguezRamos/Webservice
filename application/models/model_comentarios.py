@@ -34,12 +34,12 @@ def delete_comentarios(id_comentario):
 def insert_comentarios(id_post,id_aluminio_post,id_pet_post,id_carton_post,comentario,categoria,id_usuario_eco):
     try:
         return db.insert('comentarios',id_post=id_post,
-id_aluminio_post=id_aluminio_post,
-id_pet_post=id_pet_post,
-id_carton_post=id_carton_post,
-comentario=comentario,
-categoria=categoria,
-id_usuario_eco=id_usuario_eco)
+        id_aluminio_post=id_aluminio_post,
+        id_pet_post=id_pet_post,
+        id_carton_post=id_carton_post,
+        comentario=comentario,
+        categoria=categoria,
+        id_usuario_eco=id_usuario_eco)
     except Exception as e:
         print "Model insert Error {}".format(e.args)
         print "Model insert Message {}".format(e.message)

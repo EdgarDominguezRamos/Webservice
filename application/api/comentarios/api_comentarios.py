@@ -28,10 +28,10 @@ class Api_comentarios:
             web.header('Content-Type', 'application/json')
             return json.dumps(comentarios_json)
 
-# http://0.0.0.0:8080/api_comentarios?user_hash=12345&action=put&id_comentario=1&product=nuevo&description=nueva&stock=10&purchase_price=1&price_sale=3&product_image=0
+# http://0.0.0.0:8080/api_comentarios?user_hash=12345&action=put&id_post=1&id_aluminio_post=1&id_pet_post=1&id_carton_post=1&comentario=prueba&id_usuario_eco=MarisolNery
     def put(self, id_post,id_aluminio_post,id_pet_post,id_carton_post,comentario,categoria,id_usuario_eco):
         try:
-            config.model.insert_comentarios(id_post,id_aluminio_post,id_pet_post,id_carton_post,fecha_comentario,comentario,categoria,id_usuario_eco)
+            config.model.insert_comentarios(id_post,id_aluminio_post,id_pet_post,id_carton_post,comentario,categoria,id_usuario_eco)
             comentarios_json = '[{200}]'
             web.header('Content-Type', 'application/json')
             return json.dumps(comentarios_json)
